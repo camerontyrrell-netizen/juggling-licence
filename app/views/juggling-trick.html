@@ -16,17 +16,24 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        What is your favourite juggling trick?
-      </h1>
+   
 
       <form class="form" action="/check-answers" method="post">
 
-        <p>
-          [Insert question content here - see the
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-          for examples]
-        </p>
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{{ govukTextarea({
+  name: "most-impressive-trick",
+  id: "most-impressive-trick",
+  label: {
+    text: "What is your most impressive juggling trick?",
+    classes: "govuk-label--l",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Do not include personal or financial information, like your National Insurance number or credit card details"
+  }
+}) }}
 
         {{ govukButton({
           text: "Continue"
