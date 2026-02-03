@@ -11,6 +11,9 @@
 
     <h1 class="govuk-heading-xl">
       {{ serviceName }}
+      {{ govukButton({
+        text: "Button text"
+      }) }}
     </h1>
 
     {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
